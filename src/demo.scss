@@ -1,4 +1,4 @@
-/* RESET */
+/***** RESET *****/
 *,
 *::before,
 *::after {
@@ -43,7 +43,7 @@ h6 {
   isolation: isolate;
 }
 
-/* DEMO STYLE */
+/***** DEMO STYLE *****/
 body {
   background-image: -webkit-linear-gradient(#fff, #eaf0f8);
   background-image: linear-gradient(#fff, #eaf0f8);
