@@ -37,29 +37,29 @@ cc.run({
         }
     },
 
-    onFirstAction: function(user_preferences, cookie){
-        // callback triggered only once on the first accept/reject action
-    },
+    // onFirstAction: function(user_preferences, cookie){
+    //     // callback triggered only once on the first accept/reject action
+    // },
 
-    onAccept: function (cookie) {
-        // callback triggered on the first accept/reject action, and after each page load
-    },
+    // onAccept: function (cookie) {
+    //     // callback triggered on the first accept/reject action, and after each page load
+    // },
 
-    onChange: function (cookie, changed_preferences) {
-        // callback triggered when user changes preferences after consent has already been given
-    },
+    // onChange: function (cookie, changed_preferences) {
+    //     // callback triggered when user changes preferences after consent has already been given
+    // },
 
     languages: {
         'th': {
             consent_modal: {
                 title: 'เว็บไซต์นี้ใช้คุกกี้',
-                description: 'เราใช้คุกกี้เพื่อพัฒนาประสิทธิภาพ และประสบการณ์ที่ดีในการใช้งานเว็บไซต์ของคุณ คุณสามารถจัดการคุกกี้ของคุณได้เอง โดยคลิกที่ <button type="button" data-cc="c-settings" class="cc-link">ตั้งค่าคุกกี้</button>',
+                description: 'เราใช้คุกกี้เพื่อพัฒนาประสิทธิภาพ และมอบประสบการณ์ที่ดีในการใช้งานเว็บไซต์ของคุณ รวมถึงเสนอสิทธิประโยชน์ที่ตรงตามความสนใจของคุณให้มากที่สุด ทั้งนี้คุณสามารถจัดการคุกกี้ของคุณได้เอง โดยคลิกที่ <button type="button" data-cc="c-settings" class="cc-link">ตั้งค่าคุกกี้</button>',
                 primary_btn: {
                     text: 'ยอมรับทั้งหมด',
                     role: 'accept_all'              // 'accept_selected' or 'accept_all'
                 },
                 secondary_btn: {
-                    text: 'ยอมรับบางส่วน',
+                    text: 'ยอมรับเท่าที่จำเป็น',
                     role: 'accept_necessary'        // 'settings' or 'accept_necessary'
                 }
             },
