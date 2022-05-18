@@ -1,0 +1,67 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root
+#__next {
+  isolation: isolate;
+}
+
+/* DEMO STYLE */
+body {
+  background-image: -webkit-linear-gradient(#fff, #eaf0f8);
+  background-image: linear-gradient(#fff, #eaf0f8);
+}
+.site-wrapper {
+  background: url(../img/circle-green-gradient.svg) -360px -740px no-repeat,
+    url(../img/circle-green-gradient.svg) right -460px bottom -720px no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.site-content {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-wrapper {
+    background-position: -300px -600px, right -260px bottom -660px;
+  }
+}
