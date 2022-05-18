@@ -1,4 +1,6 @@
 /***** THEME COLOR-SCHEME *****/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Sarabun:wght@500&display=swap');
+
 :root{
     --cc-bg: #fff;
     --cc-text: #2d4156;
@@ -21,4 +23,8 @@
     --cc-overlay-bg: rgba(4, 6, 8, .85);
     --cc-webkit-scrollbar-bg: #cfd5db;
     --cc-webkit-scrollbar-bg-hover: #9199a0;
+    --cc-font-heading: 'IBM Plex Sans Thai';
+    --cc-font-body: 'Sarabun';
+    --cc-font-heading-weight: 700;
+    --cc-font-body-weight: 500;
 }

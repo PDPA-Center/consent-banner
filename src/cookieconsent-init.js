@@ -7,6 +7,7 @@ cc.run({
     theme_css: 'assets/style/cookietheme.css',
     autoclear_cookies: true,                   // default: false
     page_scripts: true,                        // default: false
+    cookie_name: 'centry_cookie',               // default: 'cc_cookie'
 
     // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
     // delay: 0,                               // default: 0
@@ -15,7 +16,6 @@ cc.run({
     // force_consent: false,                   // default: false
     // hide_from_bots: false,                  // default: false
     // remove_cookie_tables: false             // default: false
-    // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
     // cookie_expiration: 182,                 // default: 182 (days)
     // cookie_necessary_only_expiration: 182   // default: disabled
     // cookie_domain: location.hostname,       // default: current domain
@@ -38,15 +38,15 @@ cc.run({
     },
 
     onFirstAction: function(user_preferences, cookie){
-        // callback triggered only once
+        // callback triggered only once on the first accept/reject action
     },
 
     onAccept: function (cookie) {
-        // ...
+        // callback triggered on the first accept/reject action, and after each page load
     },
 
     onChange: function (cookie, changed_preferences) {
-        // ...
+        // callback triggered when user changes preferences after consent has already been given
     },
 
     languages: {
@@ -56,11 +56,11 @@ cc.run({
                 description: 'เราใช้คุกกี้เพื่อพัฒนาประสิทธิภาพ และประสบการณ์ที่ดีในการใช้งานเว็บไซต์ของคุณ คุณสามารถจัดการคุกกี้ของคุณได้เอง โดยคลิกที่ <button type="button" data-cc="c-settings" class="cc-link">ตั้งค่าคุกกี้</button>',
                 primary_btn: {
                     text: 'ยอมรับทั้งหมด',
-                    role: 'accept_all' // 'accept_selected' or 'accept_all'
+                    role: 'accept_all'              // 'accept_selected' or 'accept_all'
                 },
                 secondary_btn: {
                     text: 'ยอมรับบางส่วน',
-                    role: 'accept_necessary' // 'settings' or 'accept_necessary'
+                    role: 'accept_necessary'        // 'settings' or 'accept_necessary'
                 }
             },
             settings_modal: {
