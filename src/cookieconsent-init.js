@@ -1,5 +1,6 @@
 // obtain plugin
 var cc = initCookieConsent();
+var reConsent = document.getElementById('cc-reconsent');
 
 // run plugin with your configuration
 cc.run({
@@ -37,13 +38,21 @@ cc.run({
         }
     },
 
-    // onFirstAction: function(user_preferences, cookie){
-    //     // callback triggered only once on the first accept/reject action
-    // },
+    onFirstAction: function(user_preferences, cookie){
+        // callback triggered only once on the first accept/reject action
+        // var reConsent = document.getElementById('cc-reconsent')
+        // reConsent.classList.add('is-active')
+        // console.log(user_preferences, cookie)
+    },
 
-    // onAccept: function (cookie) {
-    //     // callback triggered on the first accept/reject action, and after each page load
-    // },
+    onAccept: function (cookie) {
+        // callback triggered on the first accept/reject action, and after each page load
+        if (cc.validCookie('centry_cookie')) {
+            reConsent.classList.add('is-active')
+        } else {
+            reConsent.classList.remove('is-active')
+        }
+    },
 
     // onChange: function (cookie, changed_preferences) {
     //     // callback triggered when user changes preferences after consent has already been given
@@ -64,7 +73,7 @@ cc.run({
                 }
             },
             settings_modal: {
-                title: '<div class="s-ttl">การตั้งค่าคุกกี้</div><div class="powerby" aria-hidden="true">โดย <a tabindex="-1" aria-hidden="true" href="http://centry.in.th/" title="CENTRY" target="_blank">CENTRY</a></div>',
+                title: '<div class="s-ttl">การตั้งค่าคุกกี้</div><div class="cc-powerby" aria-hidden="true">โดย <a tabindex="-1" aria-hidden="true" href="http://centry.in.th/" title="CENTRY" target="_blank">CENTRY</a></div>',
                 save_settings_btn: 'ยืนยันการยอมรับ',
                 accept_all_btn: 'ยอมรับทั้งหมด',
                 reject_all_btn: 'ยอมรับเท่าที่จำเป็น',
@@ -72,7 +81,7 @@ cc.run({
                 blocks: [
                     {
                         title: 'คุกกี้ที่ใช้ในเว็บไซต์',
-                        description: 'เมื่อคุณเข้ามาที่หน้าเว็บไซต์ จะมีการใช้คุกกี้เพื่อการปรับปรุงพัฒนาประสิทธิภาพ และมอบประสบการณ์ที่ดีในการใช้งานเว็บไซต์ของคุณ คุณสามารถเลือกการตั้งค่าคุกกี้โดย เปิด/ปิด คุกกี้ในแต่ละประเภทได้ตามความต้องการ ยกเว้น คุกกี้พื้นฐานที่จำเป็น คุณสามารถอ่านรายละเอียดเพิ่มเติมเกี่ยวกับคุกกี้ได้ที่ <a class="cc-link" href="#" title="นโยบายการใช้คุกกี้" target="_blank">นโยบายการใช้คุกกี้</a>'
+                        description: 'เมื่อคุณเข้ามาที่หน้าเว็บไซต์ จะมีการใช้คุกกี้เพื่อการปรับปรุงพัฒนาประสิทธิภาพ และมอบประสบการณ์ที่ดีในการใช้งานเว็บไซต์ของคุณ คุณสามารถเลือกการตั้งค่าคุกกี้โดย เปิด/ปิด คุกกี้ในแต่ละประเภทได้ตามความต้องการ ยกเว้น คุกกี้พื้นฐานที่จำเป็น คุณสามารถอ่านรายละเอียดเพิ่มเติมเกี่ยวกับคุกกี้ได้ที่ <a class="cc-link" href="cookies-policy.html" title="นโยบายการใช้คุกกี้" target="_blank">นโยบายการใช้คุกกี้</a>'
                     }, {
                         title: 'คุกกี้พื้นฐานที่จำเป็น',
                         description: 'คุกกี้เหล่านี้มีความสำคัญต่อการให้บริการบนเว็บไซต์แก่คุณ และเพื่อให้คุณสามารถใช้คุณลักษณะบางอย่างได้ คุกกี้เหล่านี้ช่วยในการยืนยันตัวบุคคลของผู้ใช้งานและช่วยป้องกันการปลอมแปลงบัญชีผู้ใช้งาน หากไม่มีคุกกี้เหล่านี้เราอาจไม่สามารถให้บริการแก่คุณได้ เราใช้คุกกี้ดังกล่าวนี้เพื่อให้บริการแก่คุณ',
