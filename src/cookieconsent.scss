@@ -46,6 +46,11 @@
     font-weight: 600;
 }
 
+.cc_div .b-tl {
+    font-family: var(--cc-font-heading);
+    font-weight: var(--cc-font-heading-weight);
+}
+
 #cm,
 #s-inr,
 .cc_div .c-bl,
@@ -181,16 +186,21 @@
     display: block!important;
 }
 
-#c-ttl{
+#c-ttl {
     margin-bottom: .5em;
     font-size: 1.1em;
 }
 
-.cloud #c-ttl{
+.cloud #c-ttl, .s-ttl{
     margin-top: .2em;
     font-family: var(--cc-font-heading);
     font-weight: var(--cc-font-heading-weight);
-    letter-spacing: .3px;
+}
+
+.s-ttl{
+    margin-top: 0;
+    margin-bottom: .2em;
+    font-size: 1.1em;
 }
 
 #c-txt{
@@ -209,7 +219,7 @@
     color: var(--cc-btn-secondary-text);
     background: #e5ebef;
     background: var(--cc-btn-secondary-bg);
-    padding: 1em 1.7em;
+    padding: 1.1em 1.7em .9em;
     display: inline-block;
     cursor: pointer;
     font-size: 0.92em;
@@ -283,7 +293,8 @@ CookieConsent settings modal
 
 #s-cnt .b-bn .b-tl{
     display: block;
-    font-family: inherit;
+    font-family: var(--cc-font-heading);
+    font-weight: var(--cc-font-heading-weight);
     font-size: .95em;
     width: 100%;
     position: relative;
@@ -380,10 +391,10 @@ CookieConsent settings modal
 }
 
 #s-cnt .p{
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin-top: .85em;
-    color: #2d4156;
+    font-size: 0.85em;
+    line-height: 1.65em;
+    margin-top: .5em;
+    color: var(--cc-text);
     color: var(--cc-block-text);
 }
 
@@ -449,7 +460,7 @@ CookieConsent settings modal
     padding: 1em 2.1em;
     border-top: 1px solid #f1f3f5;
     border-color: var(--cc-section-border);
-    height: 4.75em;
+    height: 5em;
 }
 
 .cc_div .cc-link{
@@ -1376,3 +1387,9 @@ html.force--consent.show--consent body{
 }
 
 /** END IE FIXES **/
+
+.powerby {
+    font-size: .7em;
+    font-weight: var(--cc-font-body-weight);
+    color: var(--cc-text);
+}
