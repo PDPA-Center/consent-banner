@@ -9,7 +9,7 @@
 }
 html,
 body {
-  height: 100%;
+  height: auto;
 }
 body {
   line-height: 1.5;
@@ -53,8 +53,13 @@ body {
 .site-wrapper {
   background: url(../img/circle-green-gradient.svg) -360px -740px no-repeat,
     url(../img/circle-green-gradient.svg) right -460px bottom -720px no-repeat;
-  height: 100vh;
   width: 100%;
+  padding-bottom: 50px;
+    
+    .home & {
+      height: 100vh;
+      padding-bottom: 0;
+  }
 }
 .site-nav {
   display: flex;
@@ -78,13 +83,26 @@ body {
   }
 }
 .site-content {
-  display: grid;
-  place-items: center;
-  height: 70vh;
+
+  .home & {
+    display: grid;
+    place-items: center;
+    height: 70vh;
+  }
+}
+.content {
+  background-color: #fff;
+  margin: 30px auto;
+  width: 95%;
+  padding: 2em;
+  border-radius: 1em;
 }
 
 @media only screen and (min-width: 768px) {
   .site-wrapper {
     background-position: -300px -600px, right -260px bottom -660px;
+  }
+  .content {
+    width: 720px;
   }
 }
