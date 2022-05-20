@@ -9,8 +9,11 @@ cc.run({
     autoclear_cookies: true,                   // default: false
     page_scripts: true,                        // default: false
     cookie_name: 'centry_cookie',              // default: 'cc_cookie'
-    delay: 2000,                                  // default: 0
+    delay: 2000,                               // default: 0
 
+    // cookie_domain: location.hostname,       // default: current domain
+    // cookie_path: '/',                       // default: root
+    // cookie_same_site: 'Lax',                // default: 'Lax'
     // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
     // auto_language: null                     // default: null; could also be 'browser' or 'document'
     // autorun: true,                          // default: true
@@ -19,9 +22,6 @@ cc.run({
     // remove_cookie_tables: false             // default: false
     // cookie_expiration: 182,                 // default: 182 (days)
     // cookie_necessary_only_expiration: 182   // default: disabled
-    // cookie_domain: location.hostname,       // default: current domain
-    // cookie_path: '/',                       // default: root
-    // cookie_same_site: 'Lax',                // default: 'Lax'
     // use_rfc_cookie: false,                  // default: false
     // revision: 0,                            // default: 0
 
@@ -41,7 +41,7 @@ cc.run({
     // onFirstAction: function(user_preferences, cookie){
     //     // callback triggered only once on the first accept/reject action
     // },
-    
+
     onAccept: function (cookie) {
         // callback triggered on the first accept/reject action, and after each page load
         if (cc.validCookie('centry_cookie')) {
