@@ -38,13 +38,10 @@ cc.run({
         }
     },
 
-    onFirstAction: function(user_preferences, cookie){
-        // callback triggered only once on the first accept/reject action
-        // var reConsent = document.getElementById('cc-reconsent')
-        // reConsent.classList.add('is-active')
-        // console.log(user_preferences, cookie)
-    },
-
+    // onFirstAction: function(user_preferences, cookie){
+    //     // callback triggered only once on the first accept/reject action
+    // },
+    
     onAccept: function (cookie) {
         // callback triggered on the first accept/reject action, and after each page load
         if (cc.validCookie('centry_cookie')) {
@@ -116,7 +113,7 @@ cc.run({
                         }
                     }, {
                         title: 'รายละเอียดเพิ่มเติม',
-                        description: 'หากคุณมีข้อสงสัยใด ๆ เกี่ยวกับนโยบายการใช้คุกกี้ของเรา และตัวเลือกของคุณ กรุณาติดต่อเราที่ <a class="cc-link" href="#" title="ติดต่อเรา" target="_blank">ติดต่อเรา</a>'
+                        description: 'หากคุณมีข้อสงสัยใด ๆ เกี่ยวกับนโยบายการใช้คุกกี้ของเรา และตัวเลือกของคุณ กรุณา <a class="cc-link" href="#" title="ติดต่อเรา" target="_blank">ติดต่อเรา</a>'
                     }
                 ]
             }
