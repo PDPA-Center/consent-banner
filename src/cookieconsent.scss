@@ -475,6 +475,7 @@ CookieConsent settings modal
     text-decoration: none;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 0;
 }
 
 .cc_div .cc-link:hover,
@@ -1423,6 +1424,7 @@ html.force--consent.show--consent body {
     visibility: hidden;
     transform: translateY(2em);
     transition: visibility .25s linear, opacity .25s ease, transform .25s ease !important;
+    z-index: 9999;
 
     &.is-active {
         opacity: 1;
