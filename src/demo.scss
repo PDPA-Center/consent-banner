@@ -124,9 +124,10 @@ body {
     }
   }
 
-  ul {
+  ul, ol {
     color: #2d4156;
     margin-bottom: 2em;
+    padding-left: 2em;
   }
 
   li {
@@ -136,6 +137,15 @@ body {
     color: #2d4156;
     line-height: 1.65;
     margin-bottom: .5em;
+
+    > ul, > ol {
+      margin-top: 1em;
+      padding-left: 2em;
+    }
+
+    > ul {
+      list-style-type: disc;
+    }
   }
 
   a {
@@ -149,6 +159,12 @@ body {
       box-shadow: 0px 2px 0px #1d2e38;
     }
   }
+
+  .has-bg {
+    background-color: #f0f4f7;
+    border-radius: .5em;
+    padding: 1em 1.5em .5em;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -158,5 +174,11 @@ body {
   .content {
     width: 720px;
     padding: 3em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content {
+    width: 840px;
   }
 }
