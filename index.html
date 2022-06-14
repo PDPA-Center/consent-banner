@@ -1,143 +1,186 @@
 <!DOCTYPE html>
 <html lang="th">
 
-	<head>
-		<title>คุกกี้แบนเนอร์ Cookie Consent Banner</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="theme-color" content="#138543">
-		<meta name="author" content="CENTRY">
-		<meta name="description" content="คุกกี้แบนเนอร์ สำหรับการขอความยินยอมการใช้คุกกี้บนเว็บไซต์">
-		<link rel="stylesheet" href="assets/style/demo.css">
-		<link rel="stylesheet" href="assets/style/cookieconsent.css">
-		<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<head>
+	<title>คุกกี้แบนเนอร์ Cookie Consent Banner</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#138543">
+	<meta name="author" content="CENTRY">
+	<meta name="description" content="คุกกี้แบนเนอร์ สำหรับการขอความยินยอมการใช้คุกกี้บนเว็บไซต์">
+	<link rel="stylesheet" href="assets/style/demo.css">
+	<link rel="stylesheet" href="assets/style/cookieconsent.css">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script type="text/plain" data-cookiecategory="analytical" async src="https://www.googletagmanager.com/gtag/js?id=UA-83274559-1"></script>
-		<script type="text/plain" data-cookiecategory="analytical">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-83274559-1');</script>
-	</head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script type="text/plain" data-cookiecategory="analytical" async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-83274559-1"></script>
+	<script type="text/plain" data-cookiecategory="analytical">
+		window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-83274559-1');
+	</script>
+</head>
 
-	<body class="home">
-		
-		<div class="site-wrapper">
-			<nav class="site-nav">
-				<a href="index.html" title="Home">Home</a>
-				<a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a>
-				<a href="cookies-policy.html" title="Cookies Policy">Cookies Policy</a>
-			</nav>
+<body class="home">
 
-			<main class="site-content">
-				<section class="animate-logo">
-					<canvas class="canvas" width="320" height="400"></canvas>
-				</section>
-			</main>
-		</div>
+	<div class="site-wrapper">
+		<nav class="site-nav">
+			<a href="index.html" title="Home">Home</a>
+			<a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a>
+			<a href="cookies-policy.html" title="Cookies Policy">Cookies Policy</a>
+		</nav>
 
-		<button id="cc-reconsent" data-cc="c-settings">ตั้งค่าคุกกี้</button>
+		<main class="site-content">
+			<section class="animate-logo">
+				<canvas class="canvas" width="320" height="400"></canvas>
+			</section>
+		</main>
+	</div>
 
-		<!-- ZDOG 3D -->
-		<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-		<script>
+	<button id="cc-reconsent" data-cc="c-settings">ตั้งค่าคุกกี้</button>
 
-			// rotating flag variable
-			let isSpinning = true;
+	<!-- ZDOG 3D -->
+	<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+	<script>
+		// rotating flag variable
+		let isSpinning = true;
 
-			// create 724 illus in canvas
-			let ill724 = new Zdog.Illustration({
-				element: '.canvas',
-				zoom: 1,
-				dragRotate: true,
-				onDragStart: function() {
-					isSpinning = false;
-				},
-				onDragEnd: function() {
-					isSpinning = true;
-				}
-			});
-
-			// draw 7 character
-			new Zdog.Shape({
-				addTo: ill724,
-				translate: { x: -100 },
-				path: [
-					{ x: -35, y: -35 },
-					{ x: 35, y: -35 },
-					{ x: -20, y: 80 },
-				],
-				closed: false,
-				stroke: 25,
-				color: '#00517e',
-			});
-
-			// draw 2 character --> head
-			new Zdog.Ellipse({
-				addTo: ill724,
-				diameter: 70,
-				quarters: 2,
-				rotate: { z: -Zdog.TAU/4 },
-				closed: false,
-				stroke: 25,
-				color: '#148742',
-			});
-			// draw 2 character --> join point
-			new Zdog.Ellipse({
-				addTo: ill724,
-				diameter: 70,
-				quarters: 1,
-				rotate: { z: Zdog.TAU/8 },
-				closed: false,
-				stroke: 25,
-				color: '#148742',
-			});
-			// draw 2 character --> tail
-			new Zdog.Shape({
-				addTo: ill724,
-				path: [
-					{ x: 25, y: 25 },
-					{ x: -35, y: 80 },
-					{ x: 35, y: 80 },
-				],
-				closed: false,
-				stroke: 25,
-				color: '#148742',
-			});
-
-			// draw 4 character
-			new Zdog.Shape({
-				addTo: ill724,
-				translate: { x: 120 },
-				path: [
-					{ x: 15, y: 50 },
-					{ x: -55, y: 50 },
-					{ x: 0, y: -35 },
-					{ x: 0, y: 80 },
-				],
-				closed: false,
-				stroke: 25,
-				color: '#87c441',
-			});
-
-			// update & render
-			ill724.updateRenderGraph();
-
-			// animation
-			function animate() {
-
-				if ( isSpinning ) {
-					ill724.rotate.y += 0.015;
-				}
-
-				ill724.updateRenderGraph();
-				requestAnimationFrame( animate );
+		// create 724 illus in canvas
+		let ill724 = new Zdog.Illustration({
+			element: '.canvas',
+			zoom: 1,
+			dragRotate: true,
+			onDragStart: function () {
+				isSpinning = false;
+			},
+			onDragEnd: function () {
+				isSpinning = true;
 			}
-			// start animation
-			animate();
+		});
 
-		</script>
+		// draw 7 character
+		new Zdog.Shape({
+			addTo: ill724,
+			translate: {
+				x: -100
+			},
+			path: [{
+					x: -35,
+					y: -35
+				},
+				{
+					x: 35,
+					y: -35
+				},
+				{
+					x: -20,
+					y: 80
+				},
+			],
+			closed: false,
+			stroke: 25,
+			color: '#00517e',
+		});
 
-		<!-- COOKIES CONSENT -->
-		<script defer src="assets/js/cookieconsent.js"></script>
-		<script defer src="assets/js/cookieconsent-init.js"></script>
-	</body>
+		// draw 2 character --> head
+		new Zdog.Ellipse({
+			addTo: ill724,
+			diameter: 70,
+			quarters: 2,
+			rotate: {
+				z: -Zdog.TAU / 4
+			},
+			closed: false,
+			stroke: 25,
+			color: '#148742',
+		});
+		// draw 2 character --> join point
+		new Zdog.Ellipse({
+			addTo: ill724,
+			diameter: 70,
+			quarters: 1,
+			rotate: {
+				z: Zdog.TAU / 8
+			},
+			closed: false,
+			stroke: 25,
+			color: '#148742',
+		});
+		// draw 2 character --> tail
+		new Zdog.Shape({
+			addTo: ill724,
+			path: [{
+					x: 25,
+					y: 25
+				},
+				{
+					x: -35,
+					y: 80
+				},
+				{
+					x: 35,
+					y: 80
+				},
+			],
+			closed: false,
+			stroke: 25,
+			color: '#148742',
+		});
+
+		// draw 4 character
+		new Zdog.Shape({
+			addTo: ill724,
+			translate: {
+				x: 120
+			},
+			path: [{
+					x: 15,
+					y: 50
+				},
+				{
+					x: -55,
+					y: 50
+				},
+				{
+					x: 0,
+					y: -35
+				},
+				{
+					x: 0,
+					y: 80
+				},
+			],
+			closed: false,
+			stroke: 25,
+			color: '#87c441',
+		});
+
+		// update & render
+		ill724.updateRenderGraph();
+
+		// animation
+		function animate() {
+
+			if (isSpinning) {
+				ill724.rotate.y += 0.015;
+			}
+
+			ill724.updateRenderGraph();
+			requestAnimationFrame(animate);
+		}
+		// start animation
+		animate();
+	</script>
+
+	<!-- COOKIES CONSENT -->
+	<script defer src="assets/js/cookieconsent.js"></script>
+	<script defer src="assets/js/cookieconsent-init.js"></script>
+	<script>
+		document.onreadystatechange = function (event) {
+			if (document.readyState === "complete") {
+				cc.eraseCookies(['centry_cookie']);
+			}
+		}
+	</script>
+</body>
 
 </html>
